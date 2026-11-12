@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>FitSaathi – AI fitness coach that knows your body</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<script src="js/theme.js"></script>
+</head>
+<body>
+<div class="wrap">
+<nav>
+  <a class="logo" href="#top">Fit<b>Saathi</b></a>
+  <div class="nav-r"><a class="h" href="#posture">Posture</a><a class="h" href="#health">Health</a><a class="h" href="#videos">Demos</a><a class="btn" href="plan.html">Start free</a></div>
+</nav>
+
+<header class="hero" id="top">
+  <div>
+    <h1>Train smart around your body, not against it.</h1>
+    <p class="lead">FitSaathi builds your workout and meal plan from your goals, your medical history and your posture. Every exercise is checked for safety before it reaches you.</p>
+    <div class="cta"><a class="btn" href="plan.html">Build my plan</a><a class="btn ghost" href="#posture">Try the posture check</a></div>
+    <p class="trust">Indian meals, Hindi and English, works on any phone. Your health data stays private.</p>
+  </div>
+  <div class="card lab" id="posture" aria-label="Live posture check demo">
+    <svg viewBox="0 0 300 380" role="img" aria-label="Side view of a person doing a squat">
+      <line x1="30" y1="338" x2="270" y2="338" stroke="var(--line)" stroke-width="4" stroke-linecap="round"/>
+      <path id="shin" class="ln" stroke="var(--ink)"/>
+      <path id="thigh" class="ln"/>
+      <path id="torso" class="ln"/>
+      <path id="arm" class="ln" stroke="var(--ink)" style="stroke-width:6"/>
+      <circle id="head" r="17" fill="var(--ink)"/>
+      <circle id="kj" r="8" fill="var(--brand)"/>
+      <text id="ang" font-size="15" font-weight="600" fill="var(--ink)" font-family="Figtree,sans-serif"></text>
+    </svg>
+    <div class="score"><h3>Form score</h3><span class="pill" id="pill">100</span></div>
+    <ul class="fb" id="fb"></ul>
+    <label for="depth"><span>Squat depth</span><span id="dv"></span></label>
+    <input id="depth" type="range" min="0" max="100" value="55">
+    <label for="lean"><span>Chest lean</span><span id="lv"></span></label>
+    <input id="lean" type="range" min="0" max="70" value="25">
+  </div>
+</header>
+</div>
+
+<section id="health"><div class="wrap two">
+  <div>
+    <h2>Your plan changes when your health does.</h2>
+    <p class="lead" style="margin-top:16px">Tell us about injuries and conditions once. Unsafe exercises are swapped automatically, before any AI suggestion is shown.</p>
+    <div class="chips" role="group" aria-label="Health conditions" id="chips"></div>
+    <div id="note"></div>
+  </div>
+  <div class="card" id="plan" aria-live="polite"></div>
+</div></section>
+
+<section id="videos"><div class="wrap">
+  <h2>See it done right before you try it.</h2>
+  <p class="lead" style="margin-top:16px">Short demo loops with the front and side view, plus the cues to remember.</p>
+  <div class="grid4" id="demos"></div>
+</div></section>
+
+<section id="start"><div class="wrap">
+  <h2>Your week, at a glance.</h2>
+  <p class="lead" style="margin-top:16px">One screen shows what to do today and how far you have come.</p>
+  <div class="dash" id="dashLive">
+    <div class="card" style="text-align:center">
+      <svg class="ring" viewBox="0 0 130 130" role="img" aria-label="72 percent of weekly goal"><circle cx="65" cy="65" r="54" stroke="var(--mint)"/><circle cx="65" cy="65" r="54" stroke="var(--brand)" stroke-dasharray="244 340" transform="rotate(-90 65 65)"/></svg>
+      <div class="big">72%</div><p class="lead" style="font-size:.95rem;margin:4px auto 0">of weekly goal</p>
+    </div>
+    <div class="card"><div class="big">12</div><p class="lead" style="font-size:.95rem">day streak</p><p style="margin-top:18px;font-weight:600">Posture score</p><div class="big" style="color:var(--good)">84</div><p class="lead" style="font-size:.9rem">up 6 from last week</p></div>
+    <div class="card"><h3>Workouts this week</h3><div class="bars" aria-hidden="true"><i style="height:60%" class="on"><span>M</span></i><i style="height:85%" class="on"><span>T</span></i><i style="height:40%"><span>W</span></i><i style="height:95%" class="on"><span>T</span></i><i style="height:70%" class="on"><span>F</span></i><i style="height:30%"><span>S</span></i><i style="height:20%"><span>S</span></i></div><div style="height:22px"></div></div>
+  </div>
+  <div style="margin-top:36px"><a class="btn" href="plan.html">Build my plan</a></div>
+</div></section>
+
+<footer><div class="wrap">FitSaathi gives fitness guidance, not medical advice. If you have a heart condition, are pregnant or recovering from surgery, talk to your doctor first. Posture feedback is approximate.</div></footer>
+
+<dialog id="dlg"><h3 id="dt"></h3><div class="vid" id="dv2">Demo video plays here. Add your MP4 path to this exercise to show it.</div><ol id="ds"></ol><button class="btn" id="dc" style="width:100%">Close</button></dialog>
+
+<script src="js/demoanim.js"></script>
+<script src="js/app.js"></script>
+<script src="js/tracker.js"></script>
+<script src="js/videos.js"></script>
+<script src="js/exdemo.js"></script>
+<script src="js/coach.js"></script>
+<script src="js/posture.js"></script>
+<script src="js/assistant.js"></script>
+</body>
+</html>
